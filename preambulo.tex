@@ -1,0 +1,97 @@
+% Preâmbulo
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertine}
+\usepackage[scaled=0.8]{FiraMono}
+\usepackage[brazilian]{babel}
+\usepackage[final]{microtype}
+
+\usepackage[left=2.5cm,right=2.5cm,bottom=4.4cm]{geometry}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage[fontsize=14.4pt]{fontsize}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{indentfirst}
+\usepackage{lettrine}
+\usepackage{anyfontsize}
+
+\usepackage{xcolor}
+\usepackage{enumerate}
+\usepackage{url}
+\usepackage{xurl}
+\usepackage{wrapfig}
+\usepackage{hanging}
+\usepackage{manyfoot}
+\usepackage{pdfpages}
+\usepackage{etoolbox}
+\usepackage{hyperref}
+
+% Formata header
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{20pt}
+\chead{\normalsize\em\nouppercase{\leftmark}}
+\rhead{\normalsize\thepage}
+
+% Formata capítulo
+\titleformat{\chapter}[display]
+	{\bfseries\huge}
+	{\filleft\normalfont\scshape\huge Capítulo \normalfont\Huge\thechapter}
+	{0ex}
+	{\titlerule\vspace{0.75ex}\filright}
+
+% Formata capítulo sem número
+\titleformat{name=\chapter,numberless}
+	{\bfseries\huge}
+	{}
+	{0ex}
+	{}
+	
+% Formata subseção
+\titleformat{\subsection}
+	{\normalfont\large\em}
+	{\thesubsection}
+	{1ex}
+	{}
+
+% Define cores
+\definecolor{LettrineColor}{RGB}{0,0,0}
+
+% Formata hyperref (linkcolor será definido após ToC)
+\hypersetup{colorlinks=true, linkcolor=., urlcolor=teal}
+
+% Arruma referência do manyfoot no pdfTeX
+\makeatletter
+\newcommand\manyfoottarget{\makebox[0pt][r]{\hypertarget{Hfootnote.\theHfootnote}\quad}}
+\patchcmd\MFL@fnoteplain{\rule}{\manyfoottarget\rule}{}{\fail}
+\makeatother
+
+% Declara footnote do autor e do tradutor
+\DeclareNewFootnote{A}[arabic]
+\DeclareNewFootnote{NT}[roman]
+
+% Define página em branco
+\newcommand\blankpage{
+	\clearpage
+	\thispagestyle{empty}
+	\null
+	\clearpage}
+	
+% Define dedicatória
+\newenvironment{dedicatoria}
+{
+	\clearpage
+	\thispagestyle{empty}
+	\vspace*{\fill}
+	\begin{center}
+	\large\em
+}
+{
+	\end{center}
+	\vspace*{\fill}
+	\clearpage
+}

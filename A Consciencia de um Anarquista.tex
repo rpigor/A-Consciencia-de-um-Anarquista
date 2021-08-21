@@ -1,0 +1,52 @@
+\documentclass[a4paper,oneside]{book}
+
+\input{preambulo}
+
+\begin{document}
+
+\frontmatter
+
+\includepdf{./assets/capa}
+
+\include{./frontmatter/titulo}
+
+\begin{dedicatoria}
+Para Elenor.
+\end{dedicatoria}
+
+\blankpage
+
+\setcounter{tocdepth}{0} % ToC apenas com capítulos
+\tableofcontents
+
+\hypersetup{linkcolor=teal} % formata hyperref pós-ToC
+
+\include{./frontmatter/notadotradutor}
+
+\include{./frontmatter/agradecimentos}
+
+\include{./frontmatter/introducao}
+
+\blankpage
+
+\mainmatter
+
+\include{./mainmatter/capitulo1}
+
+\include{./mainmatter/capitulo2}
+
+\include{./mainmatter/capitulo3}
+
+\include{./mainmatter/capitulo4}
+
+\include{./mainmatter/capitulo5}
+
+\include{./mainmatter/capitulo6}
+
+\backmatter
+
+\include{./backmatter/recursos}
+
+% \include{./backmatter/autor} % em construção
+
+\end{document}
