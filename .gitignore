@@ -7,3 +7,9 @@
 *.synctex(busy)
 *.synctex.gz
 *.synctex.gz(busy)
+
+*.bbl
+*.bcf
+*.blg
+
+*.xml

@@ -2,9 +2,11 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+\usepackage[bibstyle=authortitle,sorting=none,backend=biber]{biblatex}
+\usepackage{csquotes}
 \usepackage{libertine}
 \usepackage[scaled=0.8]{FiraMono}
-\usepackage[brazilian]{babel}
 \usepackage[final]{microtype}
 
 \usepackage[left=2.5cm,right=2.5cm,bottom=4.4cm]{geometry}
@@ -27,6 +29,10 @@
 \usepackage{pdfpages}
 \usepackage{etoolbox}
 \usepackage{hyperref}
+
+% Bibliografia
+\addbibresource{bibliografia.bib}
+\DeclareFieldFormat{addendum}{\newline #1}
 
 % Formata header
 \pagestyle{fancy}
