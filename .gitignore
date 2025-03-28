@@ -2,6 +2,7 @@
 *.log
 *.out
 *.toc
+*.dvi
 
 *.synctex
 *.synctex(busy)
